@@ -14,13 +14,13 @@ export default function CardDetails({ url }) {
     if (editModeEnabled) {
       // api call to save edit content, then disable edit mode
       await dispatch(updateUrl({ id: url._id, shortUrl })).unwrap();
+      toast("URL updated successfully.", { type: "success", theme: "colored" });
       setEditModeEnabled(false);
-      toast("URL Update successfully.", { type: "success" ,theme :"colored" });
     } else {
       setEditModeEnabled(true);
     }
   };
- 
+
   return (
     <div className="mb-3 max-w-[1200px] mx-auto">
       <div className="border rounded-md p-4 bg-white shadow-sm">
@@ -51,7 +51,7 @@ export default function CardDetails({ url }) {
           <div className="w-full md:w-4/6 flex items-center space-x-2">
             {!editModeEnabled && (
               <a
-                href={"http://urls-sh-backend.vercel.app/" + url.shortUrl}
+                href={"https://urls-sh-backend.vercel.app/" + url.shortUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-500 hover:underline"
@@ -78,7 +78,7 @@ export default function CardDetails({ url }) {
               <button
                 type="button"
                 onClick={() => {
-                  setClipboard(`http://urls-sh-backend.vercel.app/${url.shortUrl}`);
+                  setClipboard(`https://urls-sh-backend.vercel.app/${url.shortUrl}`);
                   toast("Short url copied to clipboard.", {
                     theme: "colored",
                   });
@@ -104,4 +104,3 @@ export default function CardDetails({ url }) {
     </div>
   );
 }
-
