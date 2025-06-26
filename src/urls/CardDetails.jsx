@@ -51,7 +51,7 @@ export default function CardDetails({ url }) {
           <div className="w-full md:w-4/6 flex items-center space-x-2">
             {!editModeEnabled && (
               <a
-                href={http://urls-sh-backend.vercel.app/" + url.shortUrl}
+                href={"http://urls-sh-backend.vercel.app/" + url.shortUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-500 hover:underline"
