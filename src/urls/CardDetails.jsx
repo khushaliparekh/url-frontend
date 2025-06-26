@@ -78,7 +78,7 @@ export default function CardDetails({ url }) {
               <button
                 type="button"
                 onClick={() => {
-                  setClipboard(http://urls-sh-backend.vercel.app/${url.shortUrl}`);
+                  setClipboard(`http://urls-sh-backend.vercel.app/${url.shortUrl}`);
                   toast("Short url copied to clipboard.", {
                     theme: "colored",
                   });
